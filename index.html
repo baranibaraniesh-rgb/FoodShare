@@ -1,236 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FoodShare</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodShare</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f4f7f5;
+ color:#222;
+}
+header{
+ background:#16803c;
+ color:white;
+ text-align:center;
+ padding:22px 15px;
+}
+header h1{margin:0;font-size:30px}
+header p{margin:8px 0 0;font-size:14px}
 
-    body {
-      background: #f5f7f5;
-      color: #222;
-    }
+.hero{
+ background:white;
+ text-align:center;
+ padding:28px 18px;
+}
+.hero h2{font-size:25px;margin:0 0 12px}
+.hero p{color:#666;line-height:1.6}
 
-    header {
-      background: #16803c;
-      color: white;
-      padding: 25px 18px;
-      text-align: center;
-    }
+.container{
+ max-width:700px;
+ margin:auto;
+ padding:15px;
+}
 
-    header h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
+.card{
+ background:white;
+ border-radius:15px;
+ padding:22px;
+ margin:15px 0;
+ box-shadow:0 3px 12px #00000012;
+ text-align:center;
+}
+.card h3{margin:8px 0}
+.card p{color:#666;line-height:1.5}
 
-    header p {
-      font-size: 15px;
-    }
+button{
+ background:#16803c;
+ color:white;
+ border:0;
+ padding:12px 20px;
+ border-radius:7px;
+ font-size:15px;
+ cursor:pointer;
+}
+button:hover{background:#106b31}
 
-    .hero {
-      text-align: center;
-      padding: 35px 20px;
-      background: white;
-    }
+.section-title{
+ font-size:22px;
+ margin-top:25px;
+}
 
-    .hero h2 {
-      font-size: 27px;
-      margin-bottom: 12px;
-    }
+.donation{
+ border:1px solid #ddd;
+ border-radius:12px;
+ padding:15px;
+ margin:12px 0;
+ text-align:left;
+}
+.donation h3{margin:0 0 8px}
+.donation p{margin:6px 0;color:#555}
 
-    .hero p {
-      color: #666;
-      line-height: 1.6;
-    }
+.status{
+ color:#16803c;
+ font-weight:bold;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 25px 18px;
-    }
+form{
+ display:none;
+ background:white;
+ padding:20px;
+ border-radius:15px;
+ box-shadow:0 3px 12px #00000012;
+ margin:15px 0;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
+input,select,textarea{
+ width:100%;
+ padding:12px;
+ margin:8px 0 14px;
+ border:1px solid #ccc;
+ border-radius:7px;
+ font-size:15px;
+}
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      text-align: center;
-    }
+label{font-weight:bold}
 
-    .card .icon {
-      font-size: 42px;
-      margin-bottom: 12px;
-    }
+.hidden{display:none}
 
-    .card h3 {
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #666;
-      line-height: 1.5;
-      margin-bottom: 18px;
-    }
-
-    button {
-      border: none;
-      background: #16803c;
-      color: white;
-      padding: 12px 22px;
-      border-radius: 8px;
-      font-size: 15px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #0f632e;
-    }
-
-    .food-section {
-      margin-top: 30px;
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-    }
-
-    .food-section h2 {
-      margin-bottom: 18px;
-    }
-
-    .food-item {
-      border: 1px solid #ddd;
-      padding: 18px;
-      border-radius: 10px;
-      margin-bottom: 12px;
-    }
-
-    .food-item h3 {
-      margin-bottom: 7px;
-    }
-
-    .food-item p {
-      color: #555;
-      margin: 5px 0;
-    }
-
-    footer {
-      margin-top: 30px;
-      padding: 20px;
-      background: #12351f;
-      color: white;
-      text-align: center;
-    }
-  </style>
+footer{
+ text-align:center;
+ padding:25px;
+ color:#777;
+ font-size:13px;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>🍱 FoodShare</h1>
-    <p>Rescue Food • Reduce Waste • Feed People</p>
-  </header>
+<header>
+<h1>🍱 FoodShare</h1>
+<p>Rescue Food • Reduce Waste • Feed People</p>
+</header>
 
-  <section class="hero">
-    <h2>Good Food Should Never Go to Waste ❤️</h2>
-    <p>
-      FoodShare connects people with surplus food to trusted NGOs
-      and volunteers who can collect and distribute it to people in need.
-    </p>
-  </section>
+<section class="hero">
+<h2>Good Food Should Never Go to Waste ❤️</h2>
+<p>
+FoodShare connects people with surplus food to
+trusted NGOs and volunteers who can collect
+and distribute it to people in need.
+</p>
+</section>
 
-  <div class="container">
+<div class="container">
 
-    <div class="cards">
+<div class="card">
+<div style="font-size:35px">🍽️</div>
+<h3>Food Donor</h3>
+<p>Function halls, hostels, hotels and individuals can share surplus food.</p>
+<button onclick="showForm('donorForm')">Donate Food</button>
+</div>
 
-      <div class="card">
-        <div class="icon">🍽️</div>
-        <h3>Food Donor</h3>
-        <p>
-          Function halls, hostels, hotels and individuals can
-          share surplus food.
-        </p>
-        <button onclick="donor()">Donate Food</button>
-      </div>
+<div class="card">
+<div style="font-size:35px">🤝</div>
+<h3>Trust / NGO</h3>
+<p>NGOs can find available food and arrange quick pickup.</p>
+<button onclick="showForm('ngoForm')">Find Food</button>
+</div>
 
-      <div class="card">
-        <div class="icon">🤝</div>
-        <h3>Trust / NGO</h3>
-        <p>
-          NGOs can find available food and arrange quick pickup.
-        </p>
-        <button onclick="trust()">Find Food</button>
-      </div>
+<div class="card">
+<div style="font-size:35px">👨‍💼</div>
+<h3>Admin</h3>
+<p>Monitor donations, pickups and distribution activities.</p>
+<button onclick="showAdmin()">Admin Panel</button>
+</div>
 
-      <div class="card">
-        <div class="icon">👨‍💼</div>
-        <h3>Admin</h3>
-        <p>
-          Monitor donations, pickups and distribution activities.
-        </p>
-        <button onclick="admin()">Admin Panel</button>
-      </div>
+<!-- DONOR FORM -->
+<form id="donorForm">
+<h2>🍱 Donate Surplus Food</h2>
 
-    </div>
+<label>Donor Name</label>
+<input id="donorName" placeholder="Enter your name">
 
-    <div class="food-section">
-      <h2>📍 Available Food Donations</h2>
+<label>Food Type</label>
+<input id="foodType" placeholder="Example: Rice, Sambar, Meals">
 
-      <div class="food-item">
-        <h3>🍚 Marriage Function</h3>
-        <p><b>Food:</b> Rice, Sambar, Vegetables</p>
-        <p><b>Quantity:</b> 50 Servings</p>
-        <p><b>Location:</b> Tiruchengode</p>
-        <p><b>Status:</b> 🟢 Available</p>
-        <button onclick="collectFood()">Accept & Collect</button>
-      </div>
+<label>Quantity</label>
+<input id="quantity" placeholder="Example: 50 servings">
 
-      <div class="food-item">
-        <h3>🍛 Hostel</h3>
-        <p><b>Food:</b> Meals</p>
-        <p><b>Quantity:</b> 30 Servings</p>
-        <p><b>Location:</b> Namakkal</p>
-        <p><b>Status:</b> 🟢 Available</p>
-        <button onclick="collectFood()">Accept & Collect</button>
-      </div>
+<label>Location</label>
+<input id="location" placeholder="Example: Tiruchengode">
 
-    </div>
-
-  </div>
-
-  <footer>
-    <p>FoodShare © 2026 | Together Against Food Waste 🌱</p>
-  </footer>
-
-  <script>
-    function donor() {
-      alert("Food Donation Form will open here.");
-    }
-
-    function trust() {
-      alert("Nearby food donations will be shown here.");
-    }
-
-    function admin() {
-      alert("Admin Dashboard will open here.");
-    }
-
-    function collectFood() {
-      alert("Food pickup request accepted! 🤝");
-    }
-  </script>
-
-</body>
-</html>
+<label>Food
